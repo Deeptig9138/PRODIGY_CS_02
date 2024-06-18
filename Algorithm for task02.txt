@@ -1,0 +1,41 @@
+Algorithm for image_encryption.py
+
+1. Initialization:
+   - Import necessary libraries: `PIL` (Pillow) for image processing and `NumPy` for array manipulation.
+
+2. Encrypt Image Function:
+   - Input: Path to the input image, path to save the encrypted image, encryption key.
+   - Process:
+     1. Open the input image using `Image.open()`.
+     2. Convert the image to a NumPy array using `np.array()`.
+     3. Add the encryption key to each pixel value, wrapping around using modulo 256.
+     4. Convert the modified NumPy array back to an image using `Image.fromarray()`.
+     5. Save the encrypted image to the specified output path.
+   - Output: Confirmation message indicating the path where the encrypted image is saved.
+
+3. Decrypt Image Function:
+   - Input: Path to the encrypted image, path to save the decrypted image, decryption key.
+   - Process:
+     1. Open the encrypted image using `Image.open()`.
+     2. Convert the image to a NumPy array using `np.array()`.
+     3. Subtract the decryption key from each pixel value, wrapping around using modulo 256.
+     4. Convert the modified NumPy array back to an image using `Image.fromarray()`.
+     5. Save the decrypted image to the specified output path.
+   - Output: Confirmation message indicating the path where the decrypted image is saved.
+
+4. Main Function:
+   - Process:
+     1. Print a welcome message for the user.
+     2. Enter a loop to continuously prompt the user for an action until they choose to quit:
+        - Prompt the user to choose whether to encrypt, decrypt, or quit.
+        - If the user chooses to quit, exit the loop.
+        - If the user chooses to encrypt:
+          - Prompt the user for the input image path, output image path, and encryption key.
+          - Call the `encrypt_image` function with the provided inputs.
+        - If the user chooses to decrypt:
+          - Prompt the user for the encrypted image path, output image path, and decryption key.
+          - Call the `decrypt_image` function with the provided inputs.
+        - If the user provides an invalid choice, print an error message and prompt again.
+   - Output: Execution of the chosen encryption or decryption process or exit the program.
+
+
